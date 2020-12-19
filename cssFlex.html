@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cssFlex</title>
+    <style>
+      .container {
+        display: flex;
+        height: 80vh;
+        background: gray;
+        flex-direction: column;
+      }
+      .item {
+        padding: 2em;
+        flex: 1;
+        /* flex-grow: 1;
+        flex-basis: 0; */
+        /* flex-basis를 0으로 할 경우 전체 간격을 비율로 가진다 */
+        border: 3px solid black;
+        background: white;
+      }
+      /* .item:nth-child(1) {
+        flex-grow: 1;
+      }
+      .item:nth-child(2) {
+        flex-grow: 2;
+      }
+      .item:nth-child(3) {
+        flex-grow: 5;
+      }
+      .item:nth-child(4) {
+        flex-grow: 4;
+      }
+      .item:nth-child(5) {
+        flex-grow: 1;
+      } */
+      /* flex-grow는 content제외한 여백의 비율 */
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item">AAA</div>
+      <div class="item">BBB</div>
+      <div class="item">CCC</div>
+      <div class="item">DDD</div>
+      <div class="item">EEE</div>
+    </div>
+  </body>
+</html>
