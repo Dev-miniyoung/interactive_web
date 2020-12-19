@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animation</title>
+    <style>
+      @keyframes sample-ani {
+        /* 시작점과 끝점의 타임라인 존재 */
+        0% {
+          transform: translate(0, 0);
+        }
+        30% {
+          transform: translate(200px, 100px);
+          background: red;
+        }
+        50% {
+          transform: translate(300px, 0);
+        }
+        100% {
+          transform: translate(400px, 400px);
+          border-radius: 50%;
+        }
+      }
+      .box {
+        width: 100px;
+        height: 100px;
+        border: 2px solid #000;
+        background: #fff000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: sample-ani 2s linear infinite alternate;
+      }
+      .box:hover {
+        animation-play-state: paused;
+      }
+      /* animation은 키프레임 추가 가능 */
+    </style>
+  </head>
+  <body>
+    <h1>Animation</h1>
+    <div class="box">Box</div>
+  </body>
+</html>
