@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS 3D</title>
+    <style>
+      .world {
+        width: 60vw;
+        height: 80vh;
+        background: #fff000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* perspective: 500px; */
+      }
+      .card {
+        width: 100px;
+        height: 200px;
+        border-radius: 0.5em;
+        background: red;
+        display: flex;
+        margin: 1em;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        transform: perspective(500px) rotateY(45deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="world">
+      <div class="card">Card</div>
+      <div class="card">Card</div>
+      <div class="card">Card</div>
+    </div>
+  </body>
+</html>
