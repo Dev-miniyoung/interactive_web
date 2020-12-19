@@ -12,27 +12,61 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        /* perspective: 500px; */
+        perspective: 500px;
       }
       .card {
+        position: relative;
         width: 100px;
         height: 200px;
-        border-radius: 0.5em;
-        background: red;
         display: flex;
         margin: 1em;
+        /* transform: perspective(500px) rotateY(45deg); */
+        transform: rotateY(0deg);
+        /* default 상태도 지정을 해줘야 성능에 좋다 */
+        transition: 1s linear;
+        transform-style: preserve-3d;
+        /* .card의 부모인 world의 perspective의 속성을 내려줘야 한다.  */
+      }
+      .card-side {
+        display: flex;
         align-items: center;
         justify-content: center;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0.5em;
         font-size: 1.5rem;
-        transform: perspective(500px) rotateY(45deg);
+        backface-visibility: hidden;
+      }
+      .card-side-front {
+        background: orange;
+        z-index: 1;
+      }
+      .card-side-back {
+        background: skyblue;
+        transform: rotateY(180deg);
+      }
+      .world:hover .card {
+        transform: rotateY(180deg);
       }
     </style>
   </head>
   <body>
     <div class="world">
-      <div class="card">Card</div>
-      <div class="card">Card</div>
-      <div class="card">Card</div>
+      <div class="card">
+        <div class="card-side card-side-front">F</div>
+        <div class="card-side card-side-back">B</div>
+      </div>
+      <div class="card">
+        <div class="card-side card-side-front">F</div>
+        <div class="card-side card-side-back">B</div>
+      </div>
+      <div class="card">
+        <div class="card-side card-side-front">F</div>
+        <div class="card-side card-side-back">B</div>
+      </div>
     </div>
   </body>
 </html>
