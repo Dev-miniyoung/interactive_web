@@ -2,10 +2,14 @@
 
 (function () {
   var houseElem = document.querySelector(".house");
+  var barElem = document.querySelector(".progress-bar");
   var maxScrollHeight;
   window.addEventListener("scroll", function () {
-    var zMove = pageYOffset / maxScrollHeight * 960 - 490;
-    houseElem.style.transform = "translateZ(" + zMove + "vw)";
+    var scrollPer = pageYOffset / maxScrollHeight;
+    var zMove = scrollPer * 960 - 490;
+    houseElem.style.transform = "translateZ(" + zMove + "vw)"; // progress bar
+
+    barElem.style.width = scrollPer * 100 + "%";
   });
 
   function resizeHandler() {
